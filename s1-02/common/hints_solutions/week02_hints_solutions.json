@@ -1,0 +1,62 @@
+{
+    "1": {
+        "typeCode": true,
+        "solution": "###week02_ex1",
+        "hints": {
+            "hint 1": "Recall the function `pd.read_csv(..)`",
+            "hint 2": "Recall the function to display the first few entries `df.head()`"
+        }
+    },
+    "1.1": {
+        "typeCode": false,
+        "solution": "###week02_ex1.1",
+        "hints": {
+            "hint 1": "You can look at the documentation with `<shift>-<tab>` or [online](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html#pandas.DataFrame.describe).",
+            "hint 2": "Are the counts all the same?"
+        }
+    },
+    "2": {
+        "typeCode": true,
+        "solution": "###week02_ex2",
+        "hints": {
+            "hint 1": "The 'threshold' should be 80% of the length of the dataframe"
+        }
+    },
+    "3": {
+        "typeCode": true,
+        "solution": "###week02_ex3",
+        "hints": {
+            "hint 1": "To split the dataset, simply create new variables, filtering for the corresponding country status",
+            "hint 2": "Recall how we computed the mean in the earlier exercises `df.mean()`"
+        }
+    },
+    "3.1": {
+        "typeCode": false,
+        "solution": "###week02_ex3.1",
+        "hints": {
+            "hint 1": "Do the numbers look reasonable in absolute terms?",
+            "hint 2": "Does the relationship between the numbers seem reasonable, bearing in mind what you know ([or learn from Wikipedia](https://en.wikipedia.org/wiki/Developing_country)) about the difference between developing and developed countries. "
+        }
+    },
+    "4": {
+        "typeCode": true,
+        "solution": "###week02_ex4",
+        "hints": {
+            "Hint 1": "To negate a condition in Pandas, use the tilde `~` operator instead of `not`, e.g.: if `people` is a DataFrame with a column `adult` of boolean values: `child = people[~people['adult']]`.",
+            "Hint 2": "Can you utilise `~life_expectancy.duplicated(subset=['Country'])` ?"
+        }
+    },
+    "4.1": {
+        "typeCode": false,
+        "solution": "###week02_ex4.1",
+        "hints": {}
+    },
+    "5": {
+        "typeCode": true,
+        "solution": "###week02_ex5",
+        "hints": {
+            "hint 1": "Look at how we concatenated two dataframes. How could we extend this to a list of dataframes?",
+            "hint 2": "There are several ways to rename columns, try `co2_emissions.columns = `"
+        }
+    }
+}

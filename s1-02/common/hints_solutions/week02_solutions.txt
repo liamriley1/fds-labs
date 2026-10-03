@@ -1,0 +1,48 @@
+###week02_ex1
+life_expectancy_loc = os.path.join(os.getcwd(), 'datasets', 'life_expectancy.csv')
+life_expectancy = pd.read_csv(life_expectancy_loc)
+life_expectancy.head()
+###week02_ex1_end
+
+###week02_ex1.1
+The `count` row represents the number of non-null values in each column. Not all the numbers are the same, suggesting some columns have some null values. 
+
+To compute the mean of the BMI column, you would select it via its column name (i.e. `life_expectency["BMI"]`, thus making a Series) and then apply the `.mean()` function to the Series, (i.e. `life_expectency["BMI"].mean()`).
+###week02_ex1.1_end
+
+###week02_ex2
+threshold = int(0.8* len(life_expectancy))
+cleaned_life_expectancy = life_expectancy.dropna(axis=1, thresh=threshold)
+cleaned_life_expectancy
+###week02_ex2_end
+
+###week02_ex3
+developed = life_expectancy[life_expectancy["Status"]=="Developed"]
+developing = life_expectancy[life_expectancy["Status"]=="Developing"]
+# One way of printing to 1 decimal place - it's also good to label output, along with units
+print("Developing life expectancy: %2.1f years"%(developing["Life expectancy"].mean()))
+print("Developed life expectancy:  %2.1f years"%(developed["Life expectancy"].mean()))
+###week02_ex3_end
+
+###week02_ex3.1
+Both life expectancies are between 65 and 80, which seems a reasonable range for human life expectancy. The life expectancy is greater in developed countries than developing ones. This relationship seems reasonable, since developing countries tend to be richer and have better health care systems than developing ones.
+###week02_ex3.1_end
+
+###week02_ex4
+cleaned_life_expectancy = life_expectancy[~life_expectancy.duplicated(subset=['Country'])]
+cleaned_life_expectancy.head()
+###week02_ex4_end
+
+###week02_ex4.1
+Schooling, Income composition of resources, and adult mortality have the clearest correlation. However, BMI, health expenditure, and HIV also have a correlation with outliers.
+###week02_ex4.1_end
+
+###week02_ex5
+co2_emissions = pd.concat(df_for_each_region)
+
+co2_emissions.columns = ["year", "annual_co2_tonnes", "region"]
+
+print(co2_emissions.head())
+print()
+print(co2_emissions.tail())
+###week02_ex5_end
